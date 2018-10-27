@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,69 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="drawingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lB-kG-iWJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="259"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bib-7R-0wI" customClass="CanvasView" customModule="drawingApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="279" width="375" height="258.5"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feR-wq-MBV">
+                                <rect key="frame" x="0.0" y="537.5" width="187.5" height="129.5"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" red="0.1343058372" green="0.32418142080000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearCanvas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SeS-Fy-zqX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zf4-7k-9aY">
+                                <rect key="frame" x="187.5" y="537.5" width="187.5" height="129.5"/>
+                                <state key="normal" title="Detect">
+                                    <color key="titleColor" red="0.1343058372" green="0.32418142080000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="detectAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zyo-lk-sDB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7lB-kG-iWJ" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.4" id="2Xd-O3-CoV"/>
+                            <constraint firstItem="Bib-7R-0wI" firstAttribute="top" secondItem="7lB-kG-iWJ" secondAttribute="bottom" id="BIl-Q5-6y1"/>
+                            <constraint firstItem="zf4-7k-9aY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EYz-LF-UOC"/>
+                            <constraint firstItem="7lB-kG-iWJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HI4-Co-KoY"/>
+                            <constraint firstItem="7lB-kG-iWJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Nkc-9X-LVM"/>
+                            <constraint firstItem="feR-wq-MBV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="S5x-bm-2p7"/>
+                            <constraint firstItem="Bib-7R-0wI" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.4" id="c5j-Zz-Pne"/>
+                            <constraint firstItem="7lB-kG-iWJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cS7-bd-Rdv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zf4-7k-9aY" secondAttribute="bottom" id="eep-kz-9nu"/>
+                            <constraint firstItem="Bib-7R-0wI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h02-b5-dZt"/>
+                            <constraint firstItem="feR-wq-MBV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j1j-UE-DhG"/>
+                            <constraint firstItem="feR-wq-MBV" firstAttribute="width" secondItem="Bib-7R-0wI" secondAttribute="width" multiplier="0.5" id="pSs-Da-oDX"/>
+                            <constraint firstItem="zf4-7k-9aY" firstAttribute="width" secondItem="Bib-7R-0wI" secondAttribute="width" multiplier="0.5" id="r6L-FA-DDG"/>
+                            <constraint firstItem="feR-wq-MBV" firstAttribute="top" secondItem="Bib-7R-0wI" secondAttribute="bottom" id="rgQ-oc-8pU"/>
+                            <constraint firstItem="zf4-7k-9aY" firstAttribute="top" secondItem="Bib-7R-0wI" secondAttribute="bottom" id="u7a-JU-u4K"/>
+                            <constraint firstItem="Bib-7R-0wI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wwG-H9-ZFi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="canvasView" destination="Bib-7R-0wI" id="3IH-yv-yKe"/>
+                        <outlet property="outputLabel" destination="7lB-kG-iWJ" id="kji-s5-5Aw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="98.50074962518741"/>
         </scene>
     </scenes>
 </document>

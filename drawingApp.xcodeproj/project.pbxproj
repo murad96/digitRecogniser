@@ -14,6 +14,8 @@
 		38147F412184219F00F75430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38147F3F2184219F00F75430 /* LaunchScreen.storyboard */; };
 		38147F4C2184219F00F75430 /* drawingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38147F4B2184219F00F75430 /* drawingAppTests.swift */; };
 		38147F572184219F00F75430 /* drawingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38147F562184219F00F75430 /* drawingAppUITests.swift */; };
+		38147F652184231400F75430 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38147F642184231400F75430 /* CanvasView.swift */; };
+		38147F67218426F900F75430 /* MNIST.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 38147F66218426F900F75430 /* MNIST.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		38147F522184219F00F75430 /* drawingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drawingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38147F562184219F00F75430 /* drawingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawingAppUITests.swift; sourceTree = "<group>"; };
 		38147F582184219F00F75430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38147F642184231400F75430 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		38147F66218426F900F75430 /* MNIST.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MNIST.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +101,14 @@
 		38147F352184219D00F75430 /* drawingApp */ = {
 			isa = PBXGroup;
 			children = (
+				38147F66218426F900F75430 /* MNIST.mlmodel */,
 				38147F362184219D00F75430 /* AppDelegate.swift */,
 				38147F382184219D00F75430 /* ViewController.swift */,
 				38147F3A2184219D00F75430 /* Main.storyboard */,
 				38147F3D2184219F00F75430 /* Assets.xcassets */,
 				38147F3F2184219F00F75430 /* LaunchScreen.storyboard */,
 				38147F422184219F00F75430 /* Info.plist */,
+				38147F642184231400F75430 /* CanvasView.swift */,
 			);
 			path = drawingApp;
 			sourceTree = "<group>";
@@ -256,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38147F67218426F900F75430 /* MNIST.mlmodel in Sources */,
 				38147F392184219D00F75430 /* ViewController.swift in Sources */,
 				38147F372184219D00F75430 /* AppDelegate.swift in Sources */,
+				38147F652184231400F75430 /* CanvasView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
